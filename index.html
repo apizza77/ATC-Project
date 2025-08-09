@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock ATC System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="role-selection" class="screen">
+        <h1>Mock ATC System</h1>
+        <p>Select your role:</p>
+        <button onclick="selectRole('pilot')">Pilot</button>
+        <button onclick="selectRole('atc')">ATC</button>
+    </div>
+
+    <div id="callsign-entry" class="screen hidden">
+        <h2>Enter Aircraft Callsign</h2>
+        <input type="text" id="callsign-input" placeholder="e.g., N738PA">
+        <button onclick="confirmCallsign()">Confirm</button>
+    </div>
+
+    <div id="pilot-interface" class="screen hidden">
+        <h2>Pilot Interface</h2>
+        <p>Callsign: <span id="display-callsign"></span></p>
+        
+        <div>
+            <h3>Contact ATC</h3>
+            <button onclick="sendPreset('requestTaxi')">Request Taxi</button>
+            <button onclick="sendPreset('requestTakeoff')">Request Takeoff</button>
+            <button onclick="sendPreset('requestLanding')">Request Landing</button>
+        </div>
+
+        <div>
+            <h3>Emergencies</h3>
+            <button onclick="sendEmergency('engineFailure')">Engine Failure</button>
+            <button onclick="sendEmergency('medicalEmergency')">Medical Emergency</button>
+            <button onclick="sendEmergency('fuelEmergency')">Low Fuel</button>
+        </div>
+
+        <div id="pilot-log"></div>
+    </div>
+
+    <div id="atc-interface" class="screen hidden">
+        <h2>ATC Interface</h2>
+        <textarea id="atc-log" rows="10" cols="50" readonly></textarea><br>
+        <input type="text" id="atc-response" placeholder="Type your response here">
+        <button onclick="sendATCResponse()">Send</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+    text-align: center;
+}
+
+.screen {
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#pilot-log, #atc-log {
+    margin-top: 20px;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    min-height: 100px;
+    text-align: left;
+}
